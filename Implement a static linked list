@@ -87,7 +87,7 @@ void stalinklist<T>::insert(int i, T a)
 	sarry[m].data = a;
 	tail = sarry[m].next;
 
-	if (front == -1)
+	if (front == -1)//链表为空
 	{
 		if (i != 0)throw"空链表只能插入0位置";//确保插入位置准确
 		sarry[tail].data = a;
@@ -95,12 +95,12 @@ void stalinklist<T>::insert(int i, T a)
 		tail = sarry[m].next;
 		sarry[m].next = -1;
 	}
-	else if (i == 0)
+	else if (i == 0)//插入链表第一个位置
 	{
 		sarry[m].next = front;
 		front = m;
 	}
-	else
+	else//插入其他位置
 	{
 		int prev = front;
 		int j = 0;
